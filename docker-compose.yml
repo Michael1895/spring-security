@@ -22,11 +22,8 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data/pgdata
       - ./init_db_roles.sh:/docker-entrypoint-initdb.d/init_db_roles.sh
-    ports:
-      - "5432:5432"
     networks:
       - internal_network
-      - external_network
   app:
     restart: always
     build: ./app
